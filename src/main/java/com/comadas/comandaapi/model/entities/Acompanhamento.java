@@ -1,40 +1,48 @@
 package com.comadas.comandaapi.model.entities;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Acompanhamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int acompanhamento_id;
 	
 	private String nomeAcompanhamento;
 	
 	private BigDecimal valor;
+	
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
+	@JsonBackReference
+	private Categoria categoria;
 
 	public Acompanhamento() {
 	}
 
-	public Acompanhamento(int id, String nomeAcompanhamento, BigDecimal valor) {
-		super();
-		this.id = id;
+	public Acompanhamento(int acompanhamento_id, String nomeAcompanhamento, BigDecimal valor, Categoria categoria) {
+		this.acompanhamento_id = acompanhamento_id;
 		this.nomeAcompanhamento = nomeAcompanhamento;
 		this.valor = valor;
+		this.categoria = categoria;
 	}
 
-	public int getId() {
-		return id;
+	public int getAcompanhamento_id() {
+		return acompanhamento_id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setAcompanhamento_id(int acompanhamento_id) {
+		this.acompanhamento_id = acompanhamento_id;
 	}
 
 	public String getNomeAcompanhamento() {
@@ -53,26 +61,12 @@ public class Acompanhamento {
 		this.valor = valor;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Acompanhamento other = (Acompanhamento) obj;
-		return id == other.id;
-	}
-
-	@Override
-	public String toString() {
-		return "Acompanhamento [id=" + id + ", nomeAcompanhamento=" + nomeAcompanhamento + ", valor=" + valor + "]";
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 	
 }
