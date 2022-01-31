@@ -1,11 +1,15 @@
 package com.comadas.comandaapi.model.entities;
 
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Prato {
@@ -17,6 +21,13 @@ public class Prato {
     private String descricao;
 	
     private double precoUnitario;
+    
+    @ManyToMany
+    @JoinTable(
+    		name = "prato_acompanhamento",
+    		joinColumns = @JoinColumn(name = "prato_id", referencedColumnName = "id"),
+    		inverseJoinColumns = @JoinColumn(name = "acompanhamento_id", referencedColumnName = "acompanhamento_id"))
+    public Set<Acompanhamento> acompanhamentos;
 
 	public Prato() {
 	}
