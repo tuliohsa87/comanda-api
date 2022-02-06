@@ -17,7 +17,7 @@ import com.comadas.comandaapi.model.entities.Comanda;
 import com.comadas.comandaapi.model.repositories.ComandaRepository;
 
 @RestController
-@RequestMapping(path = "/api/comandas")
+@RequestMapping(path = "/comandas")
 public class ComandaController {
 	
 	@Autowired

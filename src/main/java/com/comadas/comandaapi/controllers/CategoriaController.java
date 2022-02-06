@@ -16,7 +16,7 @@ import com.comadas.comandaapi.model.entities.Categoria;
 import com.comadas.comandaapi.model.repositories.CategoriaRepository;
 
 @RestController
-@RequestMapping(path = "/api/categoria")
+@RequestMapping(path = "/categoria")
 public class CategoriaController {
 	
 	@Autowired

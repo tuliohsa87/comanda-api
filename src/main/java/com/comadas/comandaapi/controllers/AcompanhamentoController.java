@@ -18,7 +18,7 @@ import com.comadas.comandaapi.model.entities.Acompanhamento;
 import com.comadas.comandaapi.model.repositories.AcompanhamentoRepository;
 
 @RestController
-@RequestMapping(path = "/api/acompanhamentos")
+@RequestMapping(path = "/acompanhamentos")
 public class AcompanhamentoController {
 	
 	@Autowired

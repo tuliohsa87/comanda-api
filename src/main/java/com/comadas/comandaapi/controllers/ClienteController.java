@@ -16,7 +16,7 @@ import com.comadas.comandaapi.model.entities.Cliente;
 import com.comadas.comandaapi.model.repositories.ClienteRepository;
 
 @RestController
-@RequestMapping(path = "/api/clientes")
+@RequestMapping(path = "/clientes")
 public class ClienteController {
 	
 	@Autowired
