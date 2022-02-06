@@ -18,7 +18,7 @@ import com.comadas.comandaapi.model.entities.Prato;
 import com.comadas.comandaapi.model.repositories.PratoRepository;
 
 @RestController
-@RequestMapping(path = "/api/pratos")
+@RequestMapping(path = "/pratos")
 public class PratoController {
 	
 	@Autowired

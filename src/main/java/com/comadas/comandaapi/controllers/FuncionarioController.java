@@ -16,7 +16,7 @@ import com.comadas.comandaapi.model.entities.Funcionario;
 import com.comadas.comandaapi.model.repositories.FuncionarioRepository;
 
 @RestController
-@RequestMapping(path = "/api/funcionarios")
+@RequestMapping(path = "/funcionarios")
 public class FuncionarioController {
 	
 	@Autowired
